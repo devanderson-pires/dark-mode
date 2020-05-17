@@ -15,14 +15,14 @@ const darkMode = {
     switch: '37px'
 };
 
-const transformKey = key => '--' + key;
+const transformProp = prop => '--' + prop;
 
 const alteraModo = props => {
 
     Object.keys(props).map(prop => {
 
-        html.style.setProperty(transformKey(prop), props[prop]);
+        html.style.setProperty(transformProp(prop), props[prop]);
     });
 };
 
-checkbox.addEventListener('change', ({ target }) => target.checked ? alteraModo(darkMode) : alteraModo(defaultStyle));
+checkbox.addEventListener('change', () => checkbox.checked ? alteraModo(darkMode) : alteraModo(defaultStyle));
